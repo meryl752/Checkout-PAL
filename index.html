@@ -6,6 +6,7 @@
     <title>Mobile Payment</title>
     <!-- Import Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,26 +14,31 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #e0ffe7 0%, #f7fafc 100%);
+            background: #F7F7F7;
             padding: 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
+            color: #181826;
         }
 
         body, input, button, select, textarea {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .main-block, .main-block * {
+            color: #fff !important;
         }
 
         .main-block {
-            max-width: 370px;
+            max-width: 350px;
             width: 100%;
             background: #181826;
             position: relative;
@@ -99,7 +105,7 @@
         .header-title {
             font-size: 16px;
             font-weight: 500;
-            color: #ffffff;
+            color: #181826;
             padding: 0;
             margin: 0;
             background: none;
@@ -115,7 +121,7 @@
             flex-direction: column;
             justify-content: flex-start;
             min-height: 220px;
-            padding-top: 18px;
+            padding-top: 60px;
         }
         .amount-logo-container {
             display: flex;
@@ -129,13 +135,18 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
+            gap: 32px;
         }
         .amount-display {
-            margin-bottom: 32px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .amount-label {
-            color: #ffffff;
+            color: #181826;
             font-size: 16px;
             margin-bottom: 10px;
         }
@@ -143,32 +154,38 @@
         .amount-value {
             font-size: 30px;
             font-weight: 700;
-            color: #ffffff;
+            color: #181826;
             margin-bottom: 0;
+            text-align: center;
+            width: 100%;
         }
 
         .pay-button {
             background: #3A3C4B;
+            margin-top: 0;
             border: none;
             color: #fff;
-            padding: 12px 14px;
+            padding: 4px 14px;
             font-size: 15px;
             font-weight: 500;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            display: block;
             border-radius: 12px;
             transition: all 0.2s;
-            width: 100%;
+            width: 80%;
+            max-width: 260px;
             margin: 0 auto;
             text-align: left;
-            margin-top: 12px;
+            min-height: 32px;
+            height: auto;
+            line-height: 20px;
         }
 
         .pay-button:hover {
-            background: #3d8ae6;
+            background: #0e9c6e;
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(74, 158, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.2);
         }
 
         .pay-btn-title {
@@ -178,9 +195,38 @@
 
         .pay-btn-desc {
             font-size: 11px;
-            color: #b8d4ff;
+            color: #fff !important;
             margin-top: 2px;
             font-weight: 400;
+        }
+
+        .pay-btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            min-height: 48px;
+        }
+        .pay-btn-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            margin-right: 14px;
+            font-size: 18px;
+            color: #10b981;
+        }
+        .pay-btn-texts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 100%;
+            min-width: 0;
+            word-break: break-word;
+            white-space: nowrap;
         }
 
         /* Screen 2 - Form */
@@ -205,7 +251,7 @@
         .form-label {
             display: block;
             margin-bottom: 8px;
-            color: #ffffff;
+            color: #181826;
             font-weight: 500;
         }
 
@@ -214,9 +260,9 @@
             padding: 12px;
             border: 1px solid #4a4d55;
             font-size: 16px;
-            color: #ffffff;
+            color: #10b981;
             border-radius: 8px;
-            background: #2a2d35;
+            background: #f7fafc;
             transition: border-color 0.2s;
         }
 
@@ -255,7 +301,7 @@
             font-size: 16px;
             color: #10b981;
             border-radius: 8px;
-            background: #2a2d35;
+            background: #f7fafc;
             transition: border-color 0.2s;
             cursor: pointer;
         }
@@ -299,18 +345,55 @@
         }
 
         .review-section {
-            margin-bottom: 30px;
+            width: 100%;
         }
-
         .review-item {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: stretch;
             margin-bottom: 20px;
+            gap: 6px;
+            width: 100%;
+        }
+        .review-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #23233a;
+            border-radius: 7px;
+            padding: 0 18px;
+            background: none;
+            min-height: 48px;
+            height: 48px;
+        }
+        .review-label, .review-value {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 1.2 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            white-space: nowrap !important;
+            background: none !important;
+        }
+        .review-label {
+            text-align: left;
+            flex: 1 1 0;
+            color: #8a8d95 !important;
+            margin-left: 12px;
+        }
+        .review-value {
+            text-align: right;
+            flex: 0 0 auto;
+            min-width: 60px;
+            color: #fff !important;
+            margin-right: 12px;
         }
 
         .receive-label {
-            color: #a0a3a8;
+            color: #3A3C4B;
             font-size: 14px;
             margin-bottom: 5px;
         }
@@ -318,12 +401,12 @@
         .receive-amount {
             font-size: 24px;
             font-weight: 700;
-            color: #ffffff;
+            color: #181826;
         }
 
         .fee-label {
             font-size: 13px;
-            color: #8a8d95;
+            color: #3A3C4B;
             margin-top: 18px;
             margin-bottom: 2px;
             font-weight: 500;
@@ -331,12 +414,12 @@
 
         .receive-value {
             font-size: 18px;
-            color: #ffffff;
+            color: #181826;
             font-weight: 600;
         }
 
         .paying-label {
-            color: #a0a3a8;
+            color: #3A3C4B;
             font-size: 14px;
             margin-bottom: 5px;
         }
@@ -344,16 +427,16 @@
         .paying-amount {
             font-size: 24px;
             font-weight: 700;
-            color: #ffffff;
+            color: #181826;
         }
 
         .paying-value {
-            color: #a0a3a8;
+            color: #3A3C4B;
             font-size: 14px;
         }
 
         .transfer-info {
-            color: #a0a3a8;
+            color: #3A3C4B;
             font-size: 14px;
             margin-bottom: 30px;
         }
@@ -362,11 +445,11 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
-            color: #a0a3a8;
+            color: #3A3C4B;
         }
 
         .fee-value {
-            color: #ffffff;
+            color: #181826;
             font-weight: 600;
         }
 
@@ -382,7 +465,7 @@
             display: flex;
             align-items: center;
             font-weight: 600;
-            color: #ffffff;
+            color: #181826;
             margin-bottom: 10px;
         }
 
@@ -393,7 +476,7 @@
         }
 
         .status-description {
-            color: #a0a3a8;
+            color: #3A3C4B;
             font-size: 14px;
             line-height: 1.4;
         }
@@ -447,10 +530,11 @@
             font-size: 16px;
             cursor: pointer;
             transition: background 0.2s;
-            color: #ffffff;
+            color: #181826;
+            background: #fff;
         }
         .country-list li:hover {
-            background: #4a4d55;
+            background: #f7fafc;
         }
 
         .pay-action-btn {
@@ -560,8 +644,7 @@
 
         .alert-permanent {
             width: 100%;
-            background: #23201b;
-            color: #fff;
+            color: #181826;
             border: 1.5px solid #ffb84a;
             border-radius: 8px;
             padding: 7px 12px 7px 48px;
@@ -597,6 +680,30 @@
             min-height: 200px;
         }
 
+        .success-screen .alert-permanent {
+            background: #23201B !important;
+            color: #ffffff !important;
+            border-color: #ffb84a;
+        }
+        .success-screen .alert-icon {
+            color: #ffb84a !important;
+        }
+        .success-screen .info-steps-container {
+            background: #0E1316 !important;
+            color: #fff !important;
+            box-shadow: none;
+            border: 1px solid #23233a;
+        }
+        .success-screen .info-steps-title {
+            color: #fff !important;
+        }
+        .success-screen .info-steps-list li {
+            color: #fff !important;
+        }
+        .success-screen .info-steps-icon {
+            color: #3ba3f7 !important;
+        }
+
         /* Footer PAL dans le conteneur */
         .container-footer {
             padding: 15px 20px;
@@ -611,13 +718,12 @@
         .pal-logo {
             font-size: 16px;
             font-weight: 700;
-            color: #ffffff;
             display: flex;
             align-items: center;
         }
 
         .pal-logo .l-green {
-            color: #10b981;
+            color: #10b981 !important;
         }
 
         .pal-dot {
@@ -635,7 +741,7 @@
         }
 
         .footer-link {
-            color: #8a8d95;
+            color: #fff;
             font-size: 13px;
             text-decoration: none;
             transition: color 0.2s;
@@ -651,7 +757,7 @@
             width: 100%;
             margin: 18px auto 0 auto;
             text-align: center;
-            color: #8a8d95;
+            color: #3A3C4B;
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.2px;
@@ -660,42 +766,208 @@
 
         /* Ajout style info steps */
         .info-steps-container {
-            background: #0e1316;
-            border-radius: 12px;
-            padding: 16px 20px 16px 54px;
+            background: #1e2d26;
+            border-radius: 10px;
+            border: 1.5px solid #10b981;
+            padding: 16px 24px;
             margin-bottom: 10px;
             margin-top: 8px;
-            position: relative;
             color: #fff;
             box-shadow: none;
-            border: none;
             max-width: 100%;
             text-align: left;
             word-break: break-word;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            min-height: 48px;
+            width: 100%;
         }
         .info-steps-icon {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            font-size: 26px;
+            font-size: 20px;
             color: #3ba3f7;
+            flex-shrink: 0;
         }
         .info-steps-title {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 4px;
             color: #fff;
         }
         .info-steps-list {
             margin: 0;
-            padding: 0 0 0 2px;
+            padding: 0 0 0 8px;
             list-style: none;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 400;
         }
         .info-steps-list li {
-            color: #b3bac1;
-            font-size: 15px;
+            color: #fff;
+            font-size: 11px;
             font-weight: 400;
             margin-bottom: 2px;
+        }
+
+        /* Arrondir uniquement les sélecteurs des réseaux de téléphonie */
+        #operatorScreen .country-list li {
+            border-radius: 12px;
+        }
+        /* Les sélecteurs de pays restent sans arrondi */
+        #countryScreen .country-list li {
+            border-radius: 0;
+        }
+
+        .main-block input,
+        .main-block select,
+        .main-block textarea {
+            background: #181826 !important;
+            color: #fff !important;
+            border-color: #4a4d55;
+        }
+
+        #countryScreen .country-list li,
+        #operatorScreen .country-list li {
+            background: #181826 !important;
+            color: #fff !important;
+        }
+        #countryScreen .country-list li:hover,
+        #operatorScreen .country-list li:hover {
+            background: #23233a !important;
+        }
+
+        #operatorScreen .country-list li[data-operator="orange"] img,
+        #operatorScreen .country-list li[data-operator="mtn"] img {
+            background: #fff !important;
+            border-radius: 6px;
+            padding: 2px;
+        }
+
+        .success-badge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            animation: fadeIn 0.7s;
+        }
+        .success-badge {
+            font-size: 60px;
+            color: #10b981;
+            margin-bottom: 18px;
+            animation: popIn 0.7s;
+        }
+        .success-badge-message {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .success-details-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.7s;
+            width: 100%;
+        }
+        .success-message-container {
+            display: flex;
+            align-items: center;
+            background: #23233a;
+            border-radius: 10px;
+            padding: 16px 24px;
+            margin-bottom: 18px;
+            color: #10b981;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 2px 12px rgba(16,185,129,0.08);
+        }
+        .success-message-container .fa-check-circle {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            60% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .success-alert-green {
+            background: #1e2d26 100;
+            border: 1.5px solid #10b981;
+            color: hsl(0, 0%, 100%);
+            font-size: 11px;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 16px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 12px rgba(16,185,129,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            width: 100%;
+        }
+        .success-alert-green .fa-check-circle {
+            color: #fff;
+            border-radius: 50%;
+            font-size: 15px;
+            margin-right: 10px;
+            padding: 2px;
+        }
+        .success-alert-green .success-message {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .review-info-block {
+            margin: 18px 0 10px 0;
+            padding: 10px 18px;
+            background: #181826;
+            border-radius: 7px;
+            border: 1px solid #23233a;
+        }
+        .review-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .review-info-label {
+            color: #8a8d95;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        .review-info-value {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            word-break: break-all;
+        }
+        .review-info-label .fa {
+            color: #10b981 !important;
+        }
+        .review-info-label .label-green {
+            color: #10b981 !important;
+            font-weight: 600;
+        }
+        .review-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .review-info-row:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -707,12 +979,19 @@
                 <div class="amount-screen">
                     <div class="amount-paypal-container">
                         <div class="amount-display">
-                            <div class="amount-label">Montant à transférer</div>
-                            <div class="amount-value" id="transferAmount">10001 CFA</div>
+                            <div class="amount-label">Montant à payer</div>
+                            <div class="amount-value" id="transferAmount">1000 FCFA</div>
                         </div>
                         <button class="pay-button" onclick="showFormScreen()">
-                            <div class="pay-btn-title"><i class="fa fa-paper-plane" style="margin-right:7px;"></i>Pay with PAL</div>
-                            <div class="pay-btn-desc">Paiement sécurisé et instantané via PAL</div>
+                            <div class="pay-btn-content">
+                                <div class="pay-btn-logo">
+                                    <i class="fa fa-paper-plane"></i>
+                                </div>
+                                <div class="pay-btn-texts">
+                                    <div class="pay-btn-title">Pay with PAL</div>
+                                    <div class="pay-btn-desc">Paiement sécurisé via PAL</div>
+                                </div>
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -731,7 +1010,10 @@
                         <form id="paymentForm">
                             <div class="form-group">
                                 <label class="form-label">Pays</label>
-                                <input type="text" class="form-input" id="countryDisplay" placeholder="Sélectionner un pays" readonly required style="cursor:pointer; background:#2a2d35;" onclick="showCountryScreen()">
+                                <div style="display:flex; align-items:center; gap:0; position:relative;">
+                                    <input type="text" class="form-input" id="countryDisplay" placeholder="Sélectionner un pays" readonly required style="cursor:pointer; flex:1; min-width:0; padding-right:38px;" onclick="showCountryScreen()">
+                                    <img id="countryFlag" src="" alt="" style="display:none; width:22px; height:16px; border-radius:3px; box-shadow:0 1px 4px rgba(0,0,0,0.08); background:none; position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none;">
+                                </div>
                                 <input type="hidden" id="country" name="country" required>
                             </div>
 
@@ -739,7 +1021,7 @@
                                 <label class="form-label">Numéro de téléphone</label>
                                 <div class="phone-input-group">
                                     <div style="position:relative; min-width:80px; max-width:80px; margin-right:8px;">
-                                        <input type="text" class="form-input" id="operatorDisplay" placeholder="OP" readonly required style="cursor:pointer; background:#2a2d35; color:#10b981; min-width:80px; max-width:80px; padding-right:18px;" onclick="showOperatorScreen()">
+                                        <input type="text" class="form-input" id="operatorDisplay" placeholder="OP" readonly required style="cursor:pointer; color:#10b981; min-width:80px; max-width:80px; padding-right:18px;" onclick="showOperatorScreen()">
                                         <span style="position:absolute; right:7px; top:50%; transform:translateY(-50%); pointer-events:none; color:#b3bac1; font-size:13px;"><i class="fa fa-chevron-down"></i></span>
                                     </div>
                                     <input type="tel" class="form-input phone-input" id="phone" placeholder="Numéro" required style="flex:1;">
@@ -752,9 +1034,7 @@
                                 <input type="email" class="form-input" id="email" placeholder="exemple@email.com" required>
                             </div>
 
-                            <button type="submit" class="continue-btn">
-                                Continue
-                            </button>
+                            <button type="submit" class="continue-btn">Continuer</button>
                         </form>
                     </div>
                 </div>
@@ -765,26 +1045,43 @@
                 <div class="review-screen">
                     <div class="header">
                         <button class="back-btn" onclick="showFormScreen()">‹</button>
-                        <div class="header-title">Review deposit</div>
+                        <div class="header-title">Review payment</div>
                         <button class="close-btn" onclick="closeApp()">×</button>
                     </div>
 
                     <div class="review-content">
                         <div class="review-section">
                             <div class="review-item">
-                                <div class="receive-label">Montant envoyé</div>
-                                <div class="receive-amount">10001 CFA</div>
-                                <div class="fee-label">Frais</div>
-                                <div class="receive-value">1.00</div>
+                                <div class="review-row">
+                                    <div class="review-label amount-label">Montant à transférer</div>
+                                    <div class="review-value receive-amount">1000 FCFA</div>
+                                </div>
+                                <div class="review-row">
+                                    <div class="review-label fee-label">Frais</div>
+                                    <div class="review-value receive-value">1.00 FCFA</div>
+                                </div>
+                                <div class="review-row">
+                                    <div class="review-label fee-label net-label">Net à payer</div>
+                                    <div class="review-value receive-amount">1001 FCFA</div>
+                                </div>
+                            </div>
+                            <div class="review-info-block" style="margin-top:0;">
+                                <div class="review-info-row">
+                                    <span class="review-info-label"><i class="fa fa-user"></i><span class="label-green" style="margin-left:5px;">Marchand</span>&nbsp;: </span>
+                                    <span class="review-info-value" id="reviewMerchantName">Yann Shop</span>
+                                </div>
+                                <div class="review-info-row">
+                                    <span class="review-info-label"><i class="fa fa-envelope"></i><span class="label-green" style="margin-left:5px;">Email</span>&nbsp;: </span>
+                                    <span class="review-info-value" id="reviewMerchantEmail">yann@email.com</span>
+                                </div>
                             </div>
 
                             <div class="transfer-info">
-                                We'll transfer you by PAL.
                             </div>
                         </div>
 
                         <button id="payBtn" class="pay-action-btn" onclick="startProcessing()">
-                            Payer
+                            Payer : 1001 F
                         </button>
                         <button id="processingBtn" class="loading-btn" style="display:none;" disabled>
                             <span class="fa-spinner-wrapper">
@@ -805,9 +1102,12 @@
                         <button class="close-btn" onclick="closeApp()"><i class="fa fa-times"></i></button>
                     </div>
                     <ul class="country-list">
-                        <li onclick="selectCountry('BN', 'Benin')">Benin</li>
-                        <li onclick="selectCountry('CA', 'Cameroon')">Cameroon</li>
-                        <li onclick="selectCountry('CH', 'Côte-d\'oire')">Côte d'ivoire</li>
+                        <li onclick="selectCountry('BN', 'Benin')">Benin <img src='https://flagcdn.com/w20/bj.png' alt='Benin' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
+                        <li onclick="selectCountry('CH', 'Côte d\'Ivoire')">Côte d'Ivoire <img src='https://flagcdn.com/w20/ci.png' alt='Côte d\'Ivoire' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
+                        <li onclick="selectCountry('SN', 'Senegal')">Senegal <img src='https://flagcdn.com/w20/sn.png' alt='Senegal' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
+                        <li onclick="selectCountry('CA', 'Cameroon')">Cameroon <img src='https://flagcdn.com/w20/cm.png' alt='Cameroon' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
+                        <li onclick="selectCountry('NG', 'Nigeria')">Nigeria <img src='https://flagcdn.com/w20/ng.png' alt='Nigeria' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
+                        <li onclick="selectCountry('GH', 'Ghana')">Ghana <img src='https://flagcdn.com/w20/gh.png' alt='Ghana' style='float:right; width:22px; height:16px; border-radius:3px;'></li>
                     </ul>
                 </div>
             </div>
@@ -821,13 +1121,13 @@
                         <button class="close-btn" onclick="closeApp()"><i class="fa fa-times"></i></button>
                     </div>
                     <ul class="country-list">
-                        <li data-operator="orange" onclick="selectOperator('orange', 'Orange')">Orange</li>
-                        <li data-operator="mtn" onclick="selectOperator('mtn', 'MTN')">MTN</li>
-                        <li data-operator="moov" onclick="selectOperator('moov', 'Moov')">Moov</li>
-                        <li data-operator="wave" onclick="selectOperator('wave', 'Wave')">Wave</li>
-                        <li data-operator="moovafrica" onclick="selectOperator('moovafrica', 'Moov Africa')">Moov Africa</li>
-                        <li data-operator="moovmoney" onclick="selectOperator('moovmoney', 'Moov Money')">Moov Money</li>
-                        <li data-operator="moovbenin" onclick="selectOperator('moovbenin', 'Moov Bénin')">Moov Bénin</li>
+                        <li data-operator="orange" onclick="selectOperator('orange', 'Orange')">Orange <img src='orange-money-logo.png' alt='Orange' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="mtn" onclick="selectOperator('mtn', 'MTN')">MTN <img src='Mtn-logo-svg.svg-removebg-preview.png' alt='MTN' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="moov" onclick="selectOperator('moov', 'Moov')">Moov <img src='images-removebg-preview.png' alt='Moov' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="wave" onclick="selectOperator('wave', 'Wave')">Wave <img src='images-removebg-preview.png' alt='Wave' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="moovafrica" onclick="selectOperator('moovafrica', 'Moov Africa')">Moov Africa <img src='images-removebg-preview.png' alt='Moov Africa' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="moovmoney" onclick="selectOperator('moovmoney', 'Moov Money')">Moov Money <img src='images-removebg-preview.png' alt='Moov Money' style='float:right; width:28px; height:28px;'></li>
+                        <li data-operator="moovbenin" onclick="selectOperator('moovbenin', 'Moov Bénin')">Moov Bénin <img src='images-removebg-preview.png' alt='Moov Bénin' style='float:right; width:28px; height:28px;'></li>
                     </ul>
                 </div>
             </div>
@@ -835,21 +1135,37 @@
             <!-- Écran de succès -->
             <div class="screen" id="successScreen">
                 <div class="success-screen">
-                    <div class="alert-permanent"><span class="alert-icon"><i class="fa fa-exclamation-circle"></i></span>Si vous n'avez pas recu le message pour valider le paiement, composer *880# puis suivez les étapes de validations.</div>
-                    <div class="info-steps-container">
-                        <span class="info-steps-icon"><i class="fa fa-clock-o"></i></span>
-                        <div class="info-steps-title">Étapes de validation</div>
-                        <ul class="info-steps-list">
-                            <li>8- Validation</li>
-                            <li>2- Validation en attente</li>
-                            <li>1- Validation financière</li>
-                        </ul>
+                    <div id="successBadgeContainer" class="success-badge-container">
+                        <div class="success-badge">
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                        <div class="success-badge-message">Votre paiement a bien été effectué !</div>
+                    </div>
+                    <div id="successDetailsContainer" class="success-details-container" style="display:none;">
+                        <div class="success-message-container success-alert-green">
+                            <i class="fa fa-check-circle"></i>
+                            <span class="success-message">Votre paiement a bien été effectué !</span>
+                        </div>
+                        <div class="alert-permanent"><span class="alert-icon"><i class="fa fa-exclamation-circle"></i></span>Si vous n'avez pas recu le message pour valider le paiement, composer *880# puis suivez les étapes de validations.</div>
+                        <div class="info-steps-container">
+                            <span class="info-steps-icon"><i class="fa fa-clock-o"></i></span>
+                            <div style="display:flex; flex-direction:column; justify-content:center;">
+                                <div class="info-steps-title">Étapes de validation</div>
+                                <ul class="info-steps-list">
+                                    <li>8- Validation</li>
+                                    <li>2- Validation en attente</li>
+                                    <li>1- Validation financière</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-footer">
-            <div class="pal-logo">PA<span class="l-green">L</span><span class="pal-dot">.</span></div>
+            <div class="pal-logo">
+                <span>PA</span><span class="l-green">L</span><span class="l-green">.</span>
+            </div>
             <div class="footer-links">
                 <a href="#" class="footer-link">Support</a>
             </div>
@@ -923,28 +1239,27 @@
             }
         }
     
-        document.getElementById('paymentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-    
-            const country = document.getElementById('country').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const operator = document.getElementById('operator').value;
-    
-            if (!country || !phone || !email || !operator) {
-                alert('Veuillez remplir tous les champs');
-                return;
-            }
-    
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Veuillez entrer une adresse email valide');
-                return;
-            }
-    
-            console.log('Données du formulaire:', { country, phone, email, operator });
-            showReviewScreen();
-        });
+        if(document.getElementById('paymentForm')) {
+            document.getElementById('paymentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const country = document.getElementById('country').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const operator = document.getElementById('operator').value;
+                if (!country || !phone || !email || !operator) {
+                    alert('Veuillez remplir tous les champs');
+                    return;
+                }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Veuillez entrer une adresse email valide');
+                    return;
+                }
+                // Mettre à jour l'email du marchand dans la review
+                // document.getElementById('reviewMerchantEmail').textContent = email;
+                showReviewScreen();
+            });
+        }
     
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
@@ -989,6 +1304,27 @@
         function selectCountry(code, name) {
             document.getElementById('country').value = code;
             document.getElementById('countryDisplay').value = name;
+            // Afficher le drapeau
+            const flagMap = {
+                'BN': 'https://flagcdn.com/w20/bj.png',
+                'CH': 'https://flagcdn.com/w20/ci.png',
+                'SN': 'https://flagcdn.com/w20/sn.png',
+                'CA': 'https://flagcdn.com/w20/cm.png',
+                'NG': 'https://flagcdn.com/w20/ng.png',
+                'GH': 'https://flagcdn.com/w20/gh.png',
+            };
+            const flagUrl = flagMap[code] || '';
+            const flagImg = document.getElementById('countryFlag');
+            console.log('[DEBUG] Sélection pays:', code, name, flagUrl, flagImg);
+            if(flagUrl && flagImg) {
+                flagImg.src = flagUrl;
+                flagImg.style.display = 'block';
+                flagImg.style.visibility = 'visible';
+                flagImg.alt = name;
+            } else if(flagImg) {
+                flagImg.style.display = 'none';
+                flagImg.style.visibility = 'hidden';
+            }
             // Réinitialiser l'opérateur sélectionné
             document.getElementById('operator').value = '';
             document.getElementById('operatorDisplay').value = '';
@@ -1007,6 +1343,17 @@
             showFormScreen();
         }
     
+        function showSuccessSequence() {
+            // Affiche d'abord le badge centré
+            document.getElementById('successBadgeContainer').style.display = 'flex';
+            document.getElementById('successDetailsContainer').style.display = 'none';
+            // Après 2,5s, transition vers le container détaillé
+            setTimeout(() => {
+                document.getElementById('successBadgeContainer').style.display = 'none';
+                document.getElementById('successDetailsContainer').style.display = 'flex';
+            }, 2500);
+        }
+    
         function startProcessing() {
             document.getElementById('payBtn').style.display = 'none';
             document.getElementById('processingBtn').style.display = 'block';
@@ -1018,16 +1365,8 @@
             }
             setTimeout(() => {
                 showScreen('successScreen');
-                showToast();
+                showSuccessSequence();
             }, 2000);
-        }
-    
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
         }
     
         // Affiche/masque les opérateurs selon le pays
